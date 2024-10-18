@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// FormsModule is required for two-way binding
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ServerComponent} from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import {SuccessAlertComponent} from './successAlert/successAlert.component';
+import { SuccessAlertComponent } from './successAlert/successAlert.component';
 import { WarningAlertComponent } from './warningAlert/warningAlert.component';
 
 @NgModule({

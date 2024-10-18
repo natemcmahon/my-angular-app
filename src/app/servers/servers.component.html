@@ -1,4 +1,61 @@
-<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
-<p>{{allowNewServer}}</p>
-<app-server></app-server>
-<app-server></app-server>
+<label>Server Name</label>
+<!-- <input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)] = "serverName">
+    <!-- <p>{{ serverName }}</p> -->
+<button 
+    class="btn btn-primary" 
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+<!-- <p>{{allowNewServer}}</p>
+<p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+<ng-template #noServer>
+    <p>
+        No server was created
+    </p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+
+<!-- <hr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <label>Username</label>
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)] = "userName">
+            <button
+                class="btn btn-primary"
+                [disabled]="allowUserNameReset"
+                (click)="saveUsername()">save username</button>
+            <button
+                class="btn btn-primary"
+                [disabled]="!allowUserNameReset"
+                (click)="clearUsername()">clear username</button>
+            <p>{{ userNameStatus }}</p>
+        </div>
+    </div>
+</div> -->
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button 
+            class="btn btn-primary"
+            (click)="onDisplayDetails()">
+                Display Details
+            </button>
+            <p *ngIf="displaySecret">Super secret secret shhhhh</p>
+            <p>{{clicks.toString()}}</p>
+            <p [ngStyle]="{'background-color': 'blue'}" [ngClass]="'white-text'">{{moreClicks.toString()}}</p>
+        </div>
+    </div>
+</div>

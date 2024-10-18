@@ -1,1 +1,4 @@
-<p>Server with ID {{serverId}} is {{ getServerStatus() }}</p>
+<!-- make online/offline display 50/50, display red if offline, if online add .online class -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus === 'online'}">
+    Server with ID {{serverId}} is {{ getServerStatus() }}</p>
