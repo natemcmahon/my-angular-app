@@ -1,5 +1,7 @@
 # MyFirstAngularApp
 
+This repo is just a practice repo which I was following along a Udemy course for Angular basics. I learned "Legacy" Angular (pre version 17) 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
